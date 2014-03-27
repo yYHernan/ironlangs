@@ -322,6 +322,7 @@ namespace IronPython.Modules {
         }
 
         public static HKEYType OpenKey(object key, string subKeyName, [DefaultParameterValue(0)]int res, [DefaultParameterValue(KEY_READ)]int sam) {
+#if FEATURE_REGISTRY_VIEW
             if ((RegistryView)(sam & (int)RegistryView.Registry32) == RegistryView.Registry32)
             {
                 _rvTemp = RegistryView.Registry32;
@@ -334,7 +335,7 @@ namespace IronPython.Modules {
             {
                 _rvTemp = RegistryView.Default;
             }
-
+#endif
             HKEYType rootKey = GetRootKey(key);
             RegistryKey newKey = null;
 
