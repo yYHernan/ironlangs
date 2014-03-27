@@ -30,6 +30,7 @@ sls     =cd /d %DLR_ROOT%\Hosts\Silverlight\Samples
 ;=
 
 bd        =msbuild.exe %DLR_ROOT%\Solutions\Dlr.sln /p:Configuration="Debug" $*
+bd2       =msbuild.exe %DLR_ROOT%\Solutions\Dlr.sln /p:Configuration="v2Debug" $*
 bdc       =msbuild.exe %DLR_ROOT%\Solutions\Dlr.sln /p:Configuration="Debug" /t:Rebuild $*
 br        =msbuild.exe %DLR_ROOT%\Solutions\Dlr.sln /p:Configuration="Release" $*
 brc       =msbuild.exe %DLR_ROOT%\Solutions\Dlr.sln /p:Configuration="Release" /t:Rebuild $*
